@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="buttonColor">#f0c47b</color>
+    <color name="home_background_color">#E1F0DA</color>
+    <color name="textBackgroundColor">#f0c47b</color>
+    <color name="gray">#808080</color>
+    <color name="toolbar_color">#191919</color>
+    <color name="app_bar_divider_color">#3554af</color>
+    <color name="brief_text_back_color">#060e23</color>
+    <color name="item_active_indicator_color">#281710</color>
+    <color name="bottom_navigation_color">#D4E7C5</color>
+    <color name="bottom_nav_bar_item_background_color">#281710</color>
+    <color name="home_text_color">#000000</color>
+</resources>

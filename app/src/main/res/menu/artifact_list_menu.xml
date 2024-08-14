@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/hatshepsut"
+        android:title="Hatshepsut"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/nefertiti"
+        android:title="Nefertiti"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/tutankhamun"
+        android:title="Tutankhamun"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut4"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut5"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut6"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut7"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut8"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut9"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut10"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut11"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut12"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/hatshepsut13"
+        android:title="Hatshepsut"
+        android:icon="@drawable/ic_mail"
+        app:showAsAction="always"/>
+</menu>
+
+<!--
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+         android:checkableBehavior="single">
+        <item android:id="@+id/hatshepsut"
+            android:title="Hatshepsut"/>
+
+        <item android:id="@+id/nefertiti"
+            android:title="Nefertiti"/>
+
+        <item android:id="@+id/tutankhamun"
+            android:title="Tutankhamun"/>
+
+        <item android:id="@+id/hatshepsut4"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut5"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut6"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut7"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut8"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut9"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut10"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut11"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut12"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+
+        <item android:id="@+id/hatshepsut13"
+            android:title="Hatshepsut"
+            android:icon="@drawable/ic_mail"/>
+    </group>
+</menu>-->

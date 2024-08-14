@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_background_color"
+        tools:context=".userSection.ui.DetailsFragment">
+
+        <ImageView
+            android:id="@+id/artifact_iv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_190sdp"
+            android:elevation="@dimen/_20sdp"
+            android:maxHeight="@dimen/_50sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/narmer_img" />
+
+        <TextView
+            android:id="@+id/artifact_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/almendrasc_regular"
+            android:textSize="@dimen/_30ssp"
+            android:textColor="@color/textBackgroundColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/artifact_iv"
+            tools:text="@string/thuthmose III" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:elevation="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/artifact_name_tv" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:elevation="@dimen/_20sdp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_line">
+
+            <TextView
+                android:id="@+id/artifact_description_tv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:lineHeight="@dimen/_20sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:textColor="@color/home_text_color"
+                android:fontFamily="@font/times_new_roman"
+                android:textSize="@dimen/_16ssp"
+                android:justificationMode="inter_word"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/thuthmose_i_history" />
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

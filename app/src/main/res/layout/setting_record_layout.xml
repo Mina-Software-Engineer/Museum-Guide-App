@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/record_language_layout_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/_10sdp"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/start_recording_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jost_regular"
+        android:text="Start Recording"
+        android:background="@color/gray"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/stop_recording_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:fontFamily="@font/jost_regular"
+        android:text="Stop Recording"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp" />
+
+</LinearLayout>

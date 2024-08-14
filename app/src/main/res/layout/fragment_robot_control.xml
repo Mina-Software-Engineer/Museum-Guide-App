@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.musuemguide.userSection.viewmodels.RobotControlViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/robot_control_fragment_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:background="@drawable/bk"
+        tools:context=".userSection.ui.RobotControlFragment">
+
+        <!--<androidx.appcompat.widget.Toolbar
+            android:id="@+id/appBar_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="#191919"
+            android:minHeight="?attr/actionBarSize"
+            android:textAlignment="center"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="#F8F0EB">
+
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="end"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="#201e21"
+                android:elevation="0dp"
+                android:src="@drawable/ic_setting"
+                app:tint="#f0c47b" />
+
+        </androidx.appcompat.widget.Toolbar>-->
+
+        <!-- <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/appBar_toolbar" />-->
+
+
+        <ImageView
+            android:id="@+id/btn_num_1"
+            style="@style/imageButtonStyle"
+            android:layout_width="66dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_88sdp"
+            android:background="@drawable/amenhotep"
+            app:layout_constraintBottom_toTopOf="@+id/btn_num_2"
+            app:layout_constraintEnd_toStartOf="@+id/btn_num_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txt_num_1"
+            style="@style/textButtonStyle"
+            android:background="@color/textBackgroundColor"
+            android:text="Amenhotep"
+            app:layout_constraintEnd_toEndOf="@id/btn_num_1"
+            app:layout_constraintStart_toStartOf="@id/btn_num_1"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_1" />
+
+        <ImageView
+            android:id="@+id/btn_num_2"
+            style="@style/imageButtonStyle"
+            android:layout_marginEnd="@dimen/_125sdp"
+            android:layout_marginBottom="@dimen/_55sdp"
+            android:background="@drawable/thuthmose_iii"
+            app:layout_constraintBottom_toTopOf="@+id/btn_num_3"
+            app:layout_constraintEnd_toStartOf="@+id/btn_num_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_num_1" />
+
+        <TextView
+            android:id="@+id/txt_num_2"
+            style="@style/textButtonStyle"
+            android:background="@color/textBackgroundColor"
+            android:text="ThuthmoseIII"
+            app:layout_constraintEnd_toEndOf="@id/btn_num_2"
+            app:layout_constraintStart_toStartOf="@id/btn_num_2"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_2" />
+
+
+        <ImageView
+            android:id="@+id/btn_num_3"
+            style="@style/imageButtonStyle"
+            android:layout_marginEnd="@dimen/_80sdp"
+            android:layout_marginBottom="@dimen/_65sdp"
+            android:background="@drawable/akenaten_i"
+            app:layout_constraintBottom_toTopOf="@+id/lower_container"
+            app:layout_constraintEnd_toStartOf="@id/btn_num_6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_num_2" />
+
+        <TextView
+            android:id="@+id/txt_num_3"
+            style="@style/textButtonStyle"
+            android:background="@color/textBackgroundColor"
+            android:text="@string/akhenaten"
+            app:layout_constraintEnd_toEndOf="@id/btn_num_3"
+            app:layout_constraintStart_toStartOf="@id/btn_num_3"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_3" />
+
+            <ImageView
+            android:id="@+id/btn_num_4"
+            style="@style/imageButtonStyle"
+            android:layout_marginStart="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/thuthmose_i"
+            app:layout_constraintBottom_toTopOf="@+id/btn_num_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_num_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_num_4"
+            style="@style/textButtonStyle"
+            android:background="@color/textBackgroundColor"
+            android:text="Thuthmose I"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@id/btn_num_4"
+            app:layout_constraintStart_toStartOf="@id/btn_num_4"
+            app:layout_constraintTop_toBottomOf="@+id/btn_num_4" />
+
+        <ImageView
+            android:id="@+id/btn_num_5"
+            style="@style/imageButtonStyle"
+            android:background="@drawable/nefertari"
+            app:layout_constraintBottom_toTopOf="@+id/btn_num_6"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_35sdp"
+            app:layout_constraintStart_toEndOf="@id/btn_num_2"
+            app:layout_constraintTop_toBottomOf="@+id/btn_num_4" />
+
+
+        <TextView
+            android:id="@+id/txt_num_5"
+            style="@style/textButtonStyle"
+            android:background="@color/textBackgroundColor"
+            android:text="Nefertari"
+            app:layout_constraintEnd_toEndOf="@id/btn_num_5"
+            app:layout_constraintStart_toStartOf="@id/btn_num_5"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_5" />
+
+        <ImageView
+            android:id="@+id/btn_num_6"
+            style="@style/imageButtonStyle"
+            android:layout_marginStart="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/tutankhamun_img_btn"
+            app:layout_constraintBottom_toTopOf="@+id/lower_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_num_3"
+            app:layout_constraintTop_toBottomOf="@+id/btn_num_5" />
+
+
+        <TextView
+            android:id="@+id/txt_num_6"
+            style="@style/textButtonStyle"
+            android:background="@color/textBackgroundColor"
+            android:text="Amenhotep II"
+            app:layout_constraintEnd_toEndOf="@id/btn_num_6"
+            app:layout_constraintStart_toStartOf="@id/btn_num_6"
+            app:layout_constraintTop_toBottomOf="@id/btn_num_6" />
+
+        <LinearLayout
+            android:id="@+id/lower_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_bluetooth_connect"
+            style="@style/bk_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connect"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_start_tour"
+                style="@style/bk_button"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/start_tour"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+            <ImageButton
+                android:id="@+id/btn_play_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                style="@style/bk_button"
+                android:src="@drawable/btn_pause"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+        <!--android:enabled="@{viewModel.buttonClickable.booleanValue()}"-->
+
+        <!--<com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showAnimationBehavior="inward" />-->
+        <!--android:fadeVisible="@{viewModel.showLoading.booleanValue()}"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

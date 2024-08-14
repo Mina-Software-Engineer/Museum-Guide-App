@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_background_color"
+    tools:context=".userSection.ui.RobotControlFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appBar_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="#191919"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="center"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Robot Control"
+        app:titleTextColor="#F8F0EB">
+
+        <ImageButton
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="#201e21"
+            android:elevation="0dp"
+            android:src="@drawable/ic_setting"
+            app:tint="#f0c47b" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--<TextView
+        android:id="@+id/header_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Robot Control"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_num_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <Button
+        android:id="@+id/btn_num_1"
+        style="@style/imageButtonStyle"
+        android:background="@drawable/hatshepsut_img_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_num_2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_num_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar_toolbar" />
+
+
+    <TextView
+        android:id="@+id/txt_num_1"
+        style="@style/textButtonStyle"
+        android:background="@color/textBackgroundColor"
+        android:text="Hatshepsut"
+        app:layout_constraintEnd_toStartOf="@id/txt_num_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_num_1" />
+
+    <Button
+        android:id="@+id/btn_num_2"
+        style="@style/imageButtonStyle"
+        android:background="@drawable/nefertiti_img_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_num_3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_num_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_num_1" />
+
+    <TextView
+        android:id="@+id/txt_num_2"
+        style="@style/textButtonStyle"
+        android:background="@color/textBackgroundColor"
+        android:text="Nefertiti"
+        app:layout_constraintEnd_toStartOf="@+id/txt_num_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_num_2" />
+
+    <Button
+        android:id="@+id/btn_num_3"
+        style="@style/imageButtonStyle"
+        android:background="@drawable/hatshepsut_img_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bluetooth_connect"
+        app:layout_constraintEnd_toStartOf="@id/btn_num_6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_num_2" />
+
+    <TextView
+        android:id="@+id/txt_num_3"
+        style="@style/textButtonStyle"
+        android:background="@color/textBackgroundColor"
+        android:text="Narmer"
+        app:layout_constraintEnd_toStartOf="@id/txt_num_6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_num_3" />
+
+    <Button
+        android:id="@+id/btn_num_4"
+        style="@style/imageButtonStyle"
+        android:background="@drawable/tutankhamun_img_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_num_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_num_1"
+        app:layout_constraintTop_toBottomOf="@id/appBar_toolbar" />
+
+    <TextView
+        android:id="@+id/txt_num_4"
+        style="@style/textButtonStyle"
+        android:background="@color/textBackgroundColor"
+        android:text="Tutankhamun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_num_1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_num_4" />
+
+    <Button
+        android:id="@+id/btn_num_5"
+        style="@style/imageButtonStyle"
+        android:background="@drawable/narmer_img_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_num_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_num_2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_num_4" />
+
+    <TextView
+        android:id="@+id/txt_num_5"
+        style="@style/textButtonStyle"
+        android:background="@color/textBackgroundColor"
+        android:text="Hatthor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_num_2"
+        app:layout_constraintTop_toBottomOf="@id/btn_num_5" />
+
+    <Button
+        android:id="@+id/btn_num_6"
+        style="@style/imageButtonStyle"
+        android:background="@drawable/tutankhamun_img_btn"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bluetooth_connect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_num_3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_num_5" />
+
+    <TextView
+        android:id="@+id/txt_num_6"
+        style="@style/textButtonStyle"
+        android:background="@color/textBackgroundColor"
+        android:text="Amenhotob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_num_3"
+        app:layout_constraintTop_toBottomOf="@id/btn_num_6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_bluetooth_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#f0c47b"
+        android:fontFamily="@font/jost_regular"
+        android:text="Connect"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_num_6" />
+
+    <!--<com.example.musuemguide.utils.AnalogControlView
+        android:id="@+id/analogControl"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp" />-->
+
+    <!--<TextView
+        android:id="@+id/TV_coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/analogControl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        tools:text="X Axis: 0.0  \n  Y Axis: 0.0" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

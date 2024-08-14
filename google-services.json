@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "495881147636",
+    "project_id": "musuem-guide",
+    "storage_bucket": "musuem-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495881147636:android:91141a24ccb2b0d5dffaa1",
+        "android_client_info": {
+          "package_name": "com.example.musuemguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAp7AAi6j_6rHkaXmxV-aUP6Sn2LVBdvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

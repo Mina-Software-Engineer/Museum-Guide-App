@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Museum Guide</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="hatshepsut_history_text">Hatshepsut was the fifth pharaoh of the Eighteenth Dynasty of Egypt. Hatshepsut was the second historically confirmed female pharaoh. She came to the throne in 1478 BC. This masks presents the idealized forms of Hatshepsut\'s face, perfect features with equal symmetry!... <font color='#dcbf7d'>Read More</font></string>
+    <string name="close" translatable="false">Close</string>
+    <string name="open" translatable="false">Open</string>
+    <string name="akhenaten_history"> Akhenaten, originally named Amenhotep IV, reigned during the 18th Dynasty, approximately from 1353 to 1336 BCE. He is best known for radically transforming the religious landscape of ancient Egypt. Unlike his predecessors, who worshipped a pantheon of gods, Akhenaten established the worship of a single deity, Aten, the sun disk. This monotheistic shift was revolutionary and marked a significant departure from centuries of Egyptian tradition.</string>
+    <string name="thuthmose_iii_history">Thutmose III, one of Egypt\'s greatest pharaohs, ruled during the 18th Dynasty, from approximately 1479 to 1425 BCE. He is often referred to as the \"Napoleon of Egypt\" due to his military prowess and numerous successful campaigns that expanded Egypt\'s empire to its greatest extent. As a young ruler, Thutmose III initially co-reigned with his stepmother, Hatshepsut, who served as his regent. Upon her death, Thutmose III took full control and embarked on a series of military campaigns that solidified his reputation as a formidable warrior king. His military expeditions extended Egypt\'s influence into the Near East and Nubia, securing vast amounts of wealth and resources</string>
+    <string name="akhenaten">Akhenaten</string>
+    <string name="nefertiti">Nefertiti</string>
+    <string name="amenhotep_i">Hatshepsut</string>
+    <string name="thuthmose_iii">Thuthmose III</string>
+    <string name="qr_reader">QR Reader</string>
+    <string name="language">Language</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="robot_control">Robot Control</string>
+    <string name="connect">Connect</string>
+    <string name="settings">Settings</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="search">Search</string>
+    <string name="welcome_n_to_the_great_egyptian_museum">Welcome \n To The Great Egyptian Museum</string>
+    <string name="amenhotep_i_history">As we transition from the reign of Akhenaten, let\'s explore another significant figure from the New Kingdom period of ancient Egypt: Amenhotep I. Amenhotep I, also known as Amenophis I, ascended to the throne around 1525 BCE, succeeding his father, Ahmose I. He was the second pharaoh of the 18th Dynasty and is often regarded as one of the most capable rulers of his time. During his reign, Amenhotep I focused on consolidating Egypt\'s borders and expanding its influence through military campaigns in Nubia and Palestine. He reinforced Egypt\'s control over trade routes and established diplomatic ties with neighboring kingdoms, ensuring stability and prosperity throughout the realm.</string>
+    <string name="thuthmose_i_history">Thutmose I, also known as Thutmosis I, was an ancient Egyptian pharaoh of the New Kingdom era, reigning from around 1506 to 1493 BCE. Thutmose I succeeded in expanding Egypt\'s influence through successful military campaigns, leading expeditions to Canaan, Syria, and Nubia. Thutmose I amassed an impressive record of military victories, including conquests in Nubia and Canaan. He improved and organized the army, strengthened centralized governance, and asserted his authority as pharaoh.</string>
+    <string name="nefertiti_history">let\'s explore the life and legacy of Nefertiti. Nefertiti, the Great Royal Wife of the pharaoh alongside Akhenaten, is one of the most captivating figures in ancient Egyptian history. She\'s believed to have been strong and intelligent, with a significant impact on society, art, and religion during her husband\'s reign. The famous bust of Nefertiti, discovered in the city of Luxor, is one of the world\'s most renowned artworks, depicting her in all her grace and beauty.  Through her roles in art and religion, Nefertiti was seen as an influential and important figure of her time, and her influence persisted in Egyptian art and culture for several centuries after her death.</string>
+    <string name="amenhotep_ii_history">Let\'s explore the life and reign of Amenhotep II. Amenhotep II, who ruled from 1427 to 1401 BCE, was an Egyptian pharaoh of the New Kingdom era. He was renowned for his military strength and the expansion of Egyptian influence during his reign, leading successful military campaigns into Syria and Nubia. Amenhotep II also dedicated himself to the reconstruction and expansion of temples, notably the famous Karnak Temple, considered the temple of Amun-Ra. These temples played a significant role in strengthening the power and political authority of the pharaoh.</string>
+    <string name="thuthmose_i">Thuthmose I</string>
+    <string name="amenhotep_ii">Amenhotep II</string>
+    <string name="welcome_message">"Welcome to the Great Museum of Egypt! Today, we will delve into the fascinating history of one of Egypt's most intriguing and revolutionary pharaohs, Akhenaten. Follow me as we explore his legacy and the unique period he represents in ancient Egyptian history. "</string>
+    <string name="start_tour">Start Tour</string>
+</resources>
