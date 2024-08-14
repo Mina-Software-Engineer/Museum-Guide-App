@@ -43,14 +43,7 @@ class RobotControlViewModel(app: Application) :
     var audioFileB: File? = null
 
     var pos: Int = 1
-    //private var flag = false
 
-    /*
-        private val _showBottomSheet = MutableLiveData<Boolean>()
-        val showBottomSheet: LiveData<Boolean> = _showBottomSheet
-    */
-
-    //private val _serverResponse = MutableLiveData<String>()
     var serverResponse: LiveData<String> = MutableLiveData<String>()
 
     private val _btnVisibility = MutableLiveData<Int>()
@@ -141,7 +134,6 @@ class RobotControlViewModel(app: Application) :
         }
     }
 
-
     private fun onAudioPlayCompletedA() {
         // Handle completion logic for mediaPlayerA
         pos++
@@ -153,18 +145,6 @@ class RobotControlViewModel(app: Application) :
             showSnackBarTxt("Tour completed.")
         }
     }
-
-    /*fun onAudioPlayCompletedB() {
-        // Handle completion logic for mediaPlayerB
-        pos++
-        if (pos <= 6) {
-            startTour(pos.toString())
-        } else if (pos == 7) {
-            makeSpeech("Thank you for visiting the museum. Have a great day!")
-        } else {
-            showSnackBarTxt("Tour completed.")
-        }
-    }*/
 
     @SuppressLint("MissingPermission")
     private suspend fun connectToDevice(device: BluetoothDevice) = withContext(Dispatchers.IO) {
@@ -232,16 +212,8 @@ class RobotControlViewModel(app: Application) :
             try {
                 if (bluetoothSocket!!.isConnected) {
                     outputStream?.write(position.toByteArray())
-                    Log.d("kjasbdkjassd", "bt is connected")
                 } else {
-                    /*val pairedDevices: Set<BluetoothDevice> = bluetoothAdapter!!.bondedDevices
-                    val device: BluetoothDevice? = pairedDevices.find { it.name == deviceName }
-                    if (device != null) {
-                        connectToDevice(device)
-                    }*/
-
                     showSnackBarTxt("Bluetooth not connected")
-
                 }
             } catch (e: IOException) {
                 //Log.d("jhghjgjgjkk", e.message.toString())
@@ -251,13 +223,9 @@ class RobotControlViewModel(app: Application) :
                     connectToDevice(device)
                     sendPosition(position)
                 }
-
-                //showSnackBarTxt("Error sending data: ${e.message}")
             }
         }
-
     }
-
 
     private fun btnVisibilityChange(visibility: Int) {
         _btnVisibility.value = visibility
@@ -273,18 +241,11 @@ class RobotControlViewModel(app: Application) :
     }
 
     fun sendText(text: String, language: String) {
-
         when (language) {
-            "en" -> {
-                //serverResponse = localRepo.response
-                Log.d("ajkjkgjga", serverResponse.value.toString())
-                localRepo.sendTextAndReceiveEnglishResponse(text)
-            }
-
+            "en" -> localRepo.sendTextAndReceiveEnglishResponse(text)
             "fr" -> localRepo.sendTextAndReceiveFrenchResponse(text)
             "de" -> localRepo.sendTextAndReceiveGermanResponse(text)
         }
-
     }
 
     fun startTour(position: String) {
@@ -294,10 +255,6 @@ class RobotControlViewModel(app: Application) :
     fun setFlag(flag: Boolean) {
         _mediaFlag.value = flag
     }
-
-    /* fun setButtonSheetBool(flag: Boolean) {
-         _showBottomSheet.value = flag
-     }*/
 
     fun pauseAudioA() {
         mediaPlayerA?.let {

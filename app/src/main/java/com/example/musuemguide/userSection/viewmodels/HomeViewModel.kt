@@ -23,7 +23,6 @@ class HomeViewModel(app: Application) :
                 _artifacts.value = localRepo.getAllArtifacts().asArtifactModel()
             }
         } catch (e: Exception) {
-            //Log.d("checkkkkk", e.message.toString())
         }
     }
 

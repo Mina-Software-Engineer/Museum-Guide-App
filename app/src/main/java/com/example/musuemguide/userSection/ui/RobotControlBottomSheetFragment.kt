@@ -10,7 +10,6 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +34,6 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
 
     val _viewModel: RobotControlViewModel by inject()
 
-    private var isRunning = true
     private var _binding: RobotControlBottomSheetBinding? = null
     private val binding get() = _binding
     var speechRecognizer: SpeechRecognizer? = null
@@ -43,10 +41,6 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
 
     //Text To Speech vars
     private lateinit var ttsHelper: TextToSpeechUtil
-
-    //private var mediaPlayer: MediaPlayer? = null
-    //private var audioFile: File? = null
-
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onInit(status: Int) {
@@ -81,41 +75,23 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
             this@RobotControlBottomSheetFragment.dismiss()
         }
 
-        /* binding!!.btnGoTo.setOnClickListener {
-             if (isRunning) {
-                 isRunning = false
-                 binding!!.btnGoTo.text = "Resume"
-                 binding!!.btnAsk.isClickable = true
-             } else {
-                 binding!!.btnGoTo.text = "Stop Robot"
-                 isRunning = true
-                 binding!!.btnAsk.isClickable = false
-                 binding!!.recorderContainer.visibility = View.GONE
-                 binding!!.recordedText.visibility = View.GONE
-             }
-         }
- */
         binding!!.btnAsk.setOnClickListener {
 
             binding!!.recorderContainer.visibility = View.VISIBLE
             binding!!.recordedText.visibility = View.VISIBLE
             binding!!.btnAsk.isClickable = false
-            if(_viewModel.mediaPlayerA?.isPlaying == true){
+            if (_viewModel.mediaPlayerA?.isPlaying == true) {
                 _viewModel.stopAudioA()
             }
-            //_viewModel.setFlag(true)
         }
 
 
 
         binding!!.btnPlayAudio.setOnClickListener {
             if (binding!!.btnPlayAudio.tag == resources.getDrawable(R.drawable.btn_pause)) {
-                Log.d("checkBTN", "Stop pressed")
                 _viewModel.pauseAudioB()
                 binding!!.btnPlayAudio.setImageResource(R.drawable.btn_play)
             } else {
-                Log.d("checkBTN", "Play pressed")
-                //stopAudio()
                 _viewModel.pauseAudioB()
                 binding!!.btnPlayAudio.setImageResource(R.drawable.btn_pause)
             }
@@ -126,20 +102,6 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
         }
 
 
-        /*binding!!.pauseAudio.setOnClickListener {
-            if (binding!!.pauseAudio.text == "Pause Audio") {
-                pauseAudio()
-                binding!!.pauseAudio.text = "Resume Audio"
-            }else{
-                resumeAudio()
-                binding!!.pauseAudio.text = "Pause Audio"
-            }
-        }*/
-
-        /*binding!!.resumeAudio.setOnClickListener {
-            resumeAudio()
-        }*/
-
         _viewModel.serverResponse.observe(viewLifecycleOwner) {
             if (it != null) {
                 _viewModel.stopAudioB()
@@ -147,60 +109,25 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
                 ttsHelper = TextToSpeechUtil(requireContext()) { status ->
                     if (status == TextToSpeech.SUCCESS) {
                         _viewModel.audioFileB = File(requireContext().filesDir, "audio.mp3")
-                        ttsHelper.convertTextToAudio(it, _viewModel.audioFileB!!, preferredLanguage ?: "en") {
-                            if(_viewModel.mediaPlayerA?.isPlaying == true){
+                        ttsHelper.convertTextToAudio(
+                            it,
+                            _viewModel.audioFileB!!,
+                            preferredLanguage ?: "en"
+                        ) {
+                            if (_viewModel.mediaPlayerA?.isPlaying == true) {
                                 _viewModel.stopAudioA()
                                 _viewModel.playAudioB()
-                            }else{
+                            } else {
                                 _viewModel.playAudioB()
                             }
                         }
                     }
                 }
-                //Log.d("cheklsjkdf", it.toString())
-                //binding!!.recordedText.text = it.toString()
             }
 
         }
         return binding!!.root
     }
-
-    /*private fun playAudio() {
-        if (audioFile != null && !audioFile!!.exists()) {
-            return
-        }
-        mediaPlayer = MediaPlayer().apply {
-            setDataSource(audioFile!!.absolutePath)
-            prepare()
-            start()
-        }
-    }*/
-
-    /*private fun stopAudio() {
-        _viewModel.mediaPlayer?.let {
-            if (it.isPlaying) {
-                it.stop()
-                it.release()
-                _viewModel.mediaPlayer = null
-            }
-        }
-    }*/
-
-    /*private fun pauseAudio() {
-        _viewModel.mediaPlayer?.let {
-            if (it.isPlaying) {
-                it.pause()
-            }
-        }
-    }*/
-
-    /*private fun resumeAudio() {
-        _viewModel.mediaPlayer?.let {
-            if (!it.isPlaying) {
-                it.start()
-            }
-        }
-    }*/
 
 
     private fun setListeners() {
@@ -236,8 +163,6 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
         if (requestCode == PERMISSIONS_REQUEST_RECORD_AUDIO) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startListening()
-            } else {
-                //_viewModel.showToast.postValue("Permission Denied!")
             }
         }
     }
@@ -280,7 +205,7 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
             val preferredLanguage = LanguageManager.loadLanguagePreference(requireContext())
             if (matches != null && matches.isNotEmpty()) {
                 val recognizedText = matches[0]
-                _viewModel.sendText(recognizedText, preferredLanguage?: "en")
+                _viewModel.sendText(recognizedText, preferredLanguage ?: "en")
                 binding!!.recordedText.text = recognizedText
             }
         }
@@ -290,7 +215,7 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
             errorLog("FAILED $errorMessage")
             binding!!.recordedText.text = errorMessage
 
-            // rest voice recogniser
+            //rest voice recogniser
             resetSpeechRecognizer()
             startListening()
         }
@@ -333,8 +258,6 @@ class RobotControlBottomSheetFragment : BottomSheetDialogFragment(), TextToSpeec
     override fun onDestroy() {
         super.onDestroy()
         speechRecognizer!!.destroy()
-        //_viewModel.mediaPlayer?.release()
-        //ttsHelper.shutDown()
 
     }
 

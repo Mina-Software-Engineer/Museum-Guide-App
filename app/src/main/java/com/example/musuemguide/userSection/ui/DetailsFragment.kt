@@ -17,6 +17,7 @@ class DetailsFragment : BaseFragment() {
     override fun startAnimation() {
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

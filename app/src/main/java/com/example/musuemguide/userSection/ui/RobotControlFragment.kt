@@ -69,13 +69,13 @@ class RobotControlFragment : BaseFragment() {
 
 
         _viewModel.btnVisibility.observe(viewLifecycleOwner) {
-                binding!!.btnStartTour.visibility = it
-                binding!!.btnPlayAudio.visibility = it
+            binding!!.btnStartTour.visibility = it
+            binding!!.btnPlayAudio.visibility = it
         }
 
-        _viewModel.mediaFlag.observe(viewLifecycleOwner) {  isConfirmed ->
+        _viewModel.mediaFlag.observe(viewLifecycleOwner) { isConfirmed ->
             if (isConfirmed) {
-                if(_viewModel.mediaPlayerB?.isPlaying == true || _viewModel.mediaPlayerA?.isPlaying == true){
+                if (_viewModel.mediaPlayerB?.isPlaying == true || _viewModel.mediaPlayerA?.isPlaying == true) {
                     _viewModel.stopAudioB()
                     _viewModel.stopAudioA()
                 }
@@ -84,18 +84,9 @@ class RobotControlFragment : BaseFragment() {
             }
         }
 
-        /*_viewModel.showBottomSheet.observe(viewLifecycleOwner) {
-            if (it) {
-                showDialog()
-                _viewModel.setButtonSheetBool(false)
-            }
-        }*/
-
         _viewModel.receivedMessage.observe(viewLifecycleOwner, Observer { message ->
-            //_viewModel.showSnackBarTxt(message)
             _viewModel.showSnackBarTxt(message)
-            Log.d("kjasbdkjassd", "bt receive")
-            when (message){
+            when (message) {
 
                 /** 3.Receiving position confirmation from robot
                  *  4.Make Speech*/
@@ -108,18 +99,23 @@ class RobotControlFragment : BaseFragment() {
                 "1" -> {
                     _viewModel.makeSpeech(getString(R.string.welcome_message) + getString(R.string.akhenaten_history))
                 }
+
                 "2" -> {
                     _viewModel.makeSpeech(getString(R.string.thuthmose_iii_history))
                 }
+
                 "3" -> {
                     _viewModel.makeSpeech(getString(R.string.amenhotep_i_history))
                 }
+
                 "4" -> {
                     _viewModel.makeSpeech(getString(R.string.thuthmose_i_history))
                 }
+
                 "5" -> {
                     _viewModel.makeSpeech(getString(R.string.nefertiti_history))
                 }
+
                 "6" -> {
                     _viewModel.makeSpeech(getString(R.string.amenhotep_ii_history))
                 }
@@ -132,11 +128,15 @@ class RobotControlFragment : BaseFragment() {
                 ttsHelper = TextToSpeechUtil(requireContext()) { status ->
                     if (status == TextToSpeech.SUCCESS) {
                         _viewModel.audioFileA = File(requireContext().filesDir, "audio.mp3")
-                        ttsHelper.convertTextToAudio(it, _viewModel.audioFileA!!, preferredLanguage?: "en") {
-                            if(_viewModel.mediaPlayerA?.isPlaying == true){
+                        ttsHelper.convertTextToAudio(
+                            it,
+                            _viewModel.audioFileA!!,
+                            preferredLanguage ?: "en"
+                        ) {
+                            if (_viewModel.mediaPlayerA?.isPlaying == true) {
                                 _viewModel.stopAudioA()
                                 _viewModel.playAudioA()
-                            }else{
+                            } else {
                                 _viewModel.playAudioA()
                             }
                         }
@@ -216,8 +216,6 @@ class RobotControlFragment : BaseFragment() {
         binding!!.btnNum3.setOnClickListener {
             _viewModel.pos = 1
             showBottomSheet()
-            //_viewModel.sendPosition("3")
-            //binding!!.robotControlFragmentBackground.setBackgroundResource(R.drawable.bk_btn_3)
         }
 
         //btn 4
@@ -225,9 +223,6 @@ class RobotControlFragment : BaseFragment() {
             _viewModel.pos = 4
             _viewModel.btnTextChange("Go To Thutmose I")
             showBottomSheet()
-            //_viewModel.sendPosition("4")
-
-            //binding!!.robotControlFragmentBackground.setBackgroundResource(R.drawable.bk_btn_4)
         }
 
         //btn 5
@@ -235,8 +230,6 @@ class RobotControlFragment : BaseFragment() {
             _viewModel.pos = 5
             _viewModel.btnTextChange("Go To Nefertiti")
             showBottomSheet()
-            //_viewModel.sendPosition("5")
-            //binding!!.robotControlFragmentBackground.setBackgroundResource(R.drawable.bk_btn_5)
         }
 
         //btn 6
@@ -244,22 +237,10 @@ class RobotControlFragment : BaseFragment() {
             _viewModel.pos = 6
             _viewModel.btnTextChange("Go To Amenhotep II")
             showBottomSheet()
-            //_viewModel.sendPosition("6")
-
-            //binding!!.robotControlFragmentBackground.setBackgroundResource(R.drawable.bk_btn_6)
         }
 
         binding!!.btnPlayAudio.setOnClickListener {
-            /*if (binding!!.btnPlayAudio.tag == resources.getDrawable(R.drawable.btn_pause)) {
-                Log.d("checkBTN", "Stop pressed")
-                resumeAudio()
-                binding!!.btnPlayAudio.setImageResource(R.drawable.btn_play)
-            }else{
-                Log.d("checkBTN", "Play pressed")
-                //stopAudio()
-                pauseAudio()
-                binding!!.btnPlayAudio.setImageResource(R.drawable.btn_pause)
-            }*/
+
 
             if (_viewModel.mediaPlayerA?.isPlaying == true) {
                 Log.d("checkBTN", "Stop pressed")
@@ -272,23 +253,8 @@ class RobotControlFragment : BaseFragment() {
             }
         }
 
-
-
-
         binding!!.btnBluetoothConnect.setOnClickListener {
-
             checkBluetoothPermission()
-            /*if (binding!!.btnBluetoothConnect.text == getString(R.string.connect)) {
-                _viewModel.showLoading(true)
-
-                checkBluetoothPermission()
-
-            } else {
-                *//**1. Setting robot position to 1 *//*
-
-                //_viewModel.makeSpeech("Hello, I am tour guide robot. I am ready to help you today!")
-                //_viewModel.receiveFromBluetooth()
-            }*/
         }
 
         binding!!.btnStartTour.setOnClickListener {
@@ -297,13 +263,18 @@ class RobotControlFragment : BaseFragment() {
         return binding!!.root
     }
 
-
     private fun checkBluetoothPermission() {
-        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_CONNECT)
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.BLUETOOTH_CONNECT
+            )
             == PackageManager.PERMISSION_GRANTED ||
             ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_SCAN)
             == PackageManager.PERMISSION_GRANTED ||
-            ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+            ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
             == PackageManager.PERMISSION_GRANTED
         ) {
 
@@ -319,18 +290,6 @@ class RobotControlFragment : BaseFragment() {
             )
         }
     }
-
-
-    /*private fun playAudio() {
-        if (_viewModel.audioFile != null && !_viewModel.audioFile!!.exists()) {
-            return
-        }
-        _viewModel.mediaPlayer = MediaPlayer().apply {
-            setDataSource(_viewModel.audioFile!!.absolutePath)
-            prepare()
-            start()
-        }
-    }*/
 
     override fun startAnimation() {
 
@@ -358,29 +317,6 @@ class RobotControlFragment : BaseFragment() {
         binding!!.btnBluetoothConnect.startAnimation(downUpBtnConnect)
 
     }
-
-    /*private fun showDialog() {
-        // Create an AlertDialog builder
-        val builder = android.app.AlertDialog.Builder(requireContext().applicationContext)
-        builder.setTitle("Any Question")
-        builder.setMessage("Do you have any question?")
-
-        // Add a positive button
-        builder.setPositiveButton("Yes") { dialog, which ->
-            // Handle the positive button click
-            showBottomSheet()
-        }
-
-        // Add a negative button
-        builder.setNegativeButton("No") { dialog, which ->
-            // Handle the negative button click
-            _viewModel.onAudioPlayCompleted()
-        }
-
-        // Create and show the dialog
-        val dialog = builder.create()
-        dialog.show()
-    }*/
 
     private fun showBottomSheet() {
         val dialog = RobotControlBottomSheetFragment()

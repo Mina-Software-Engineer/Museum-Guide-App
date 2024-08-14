@@ -4,11 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.musuemguide.databinding.ActivityMainBinding
@@ -28,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("theme_prefs", Context.MODE_PRIVATE)
 
-        //installSplashScreen()
         setContentView(binding.root)
 
         val currentTheme = sharedPreferences.getString(
@@ -39,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         changeTheme(currentTheme == SettingsFragment.THEME_DARK)
 
         val preferredLanguage = LanguageManager.loadLanguagePreference(this)
-        //Log.d("Language", "Language is $preferredLanguage")
         preferredLanguage?.let {
             LanguageManager.setLocale(this, it)
         }
